@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_app/screens/main_todo_list_screen.dart';
+import 'package:todo_list_app/providers/tasks.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(ChangeNotifierProvider(
+    create: (_) => Tasks(),
+//    providers: [
+//      ChangeNotifierProvider(create: (_) => Tasks()),
+//    ],
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -8,29 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Todo List',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
       ),
-      home: MyHomePage(title: 'ReNest'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      home: DefaultTabController(
+        length: 2,
+        child: MainTodoListView(title: 'ReNest'),
       ),
-      body: Center(),
     );
   }
 }
