@@ -12,16 +12,16 @@ class AddTaskButton extends StatefulWidget {
 }
 
 class _AddTaskButtonState extends State<AddTaskButton> {
-  bool asd = true;
+  bool tileNotClicked = true;
 
   @override
   Widget build(BuildContext context) {
-    if (asd)
+    if (tileNotClicked)
       return Padding(
         padding: const EdgeInsets.only(bottom: 12.0, left: 8.0, right: 8.0),
         child: MaterialButton(
           onPressed: () {
-            asd = false;
+            tileNotClicked = false;
             setState(() {});
           },
           shape: RoundedRectangleBorder(
@@ -55,8 +55,6 @@ class _AddTaskButtonState extends State<AddTaskButton> {
         child: Container(
           width: double.infinity,
           height: 56,
-//margin: ,
-//          color: Colors.grey[700],
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: Colors.grey[100],
@@ -75,7 +73,7 @@ class _AddTaskButtonState extends State<AddTaskButton> {
                   AddTaskPriorityButton(Colors.blue, "Low Priority", widget.task, Priority.LOW),
                   IconButton(
                     onPressed: () {
-                      asd = true;
+                      tileNotClicked = true;
                       setState(() {});
                     },
                     icon: Icon(
