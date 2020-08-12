@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:todo_list_app/enums/priority.dart';
 import 'package:uuid/uuid.dart';
 

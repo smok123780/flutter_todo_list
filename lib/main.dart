@@ -6,9 +6,6 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(ChangeNotifierProvider(
     create: (_) => Tasks(),
-//    providers: [
-//      ChangeNotifierProvider(create: (_) => Tasks()),
-//    ],
     child: MyApp(),
   ));
 }
